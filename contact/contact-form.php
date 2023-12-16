@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['Email'])) {
 
-    $email_to = "celine@rocketpsa.com";
+    $email_to = "john@rocketpsa.com";
     $email_subject = "New Inquiry RocketPSA";
 
     function problem($error)
