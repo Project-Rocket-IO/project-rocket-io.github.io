@@ -156,8 +156,8 @@
 
                             <h4 class="extra-title mb-50">Get In Touch.</h4>
 
-                            <form name ="Contact" id="contact-form" method="post" data-netlify="true" action="https://formspree.io/f/mpzvazvb">
-<!-- 
+<!--                             <form name ="Contact" id="contact-form" method="post" data-netlify="true" action="https://formspree.io/f/mpzvazvb">
+
                                 <div class="messages"></div>
 
                                 <div class="controls">
@@ -181,18 +181,22 @@
                                     </p>
                                     <button type="submit" class="btn-curve btn-lit"><span>Send Message</span></button>
                                 </div> -->
+                                <form
+                                action="https://formspree.io/f/mpzvazvb"
+                                method="POST"
+                              >
                                 <label>
-                                    Your email:
-                                    <input type="email" name="email">
-                                  </label>
-                                  <label>
-                                    Your message:
-                                    <textarea name="message"></textarea>
-                                  </label>
-                                  <!-- your other form fields go here -->
-                                  <button type="submit">Send</button>
-                                </form>
-                            </form>
+                                  Your email:
+                                  <input type="email" name="email">
+                                </label>
+                                <label>
+                                  Your message:
+                                  <textarea name="message"></textarea>
+                                </label>
+                                <!-- your other form fields go here -->
+                                <button type="submit">Send</button>
+                              </form>
+                            
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
