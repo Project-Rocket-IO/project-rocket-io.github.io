@@ -449,6 +449,29 @@ $(function() {
         time: 500
     });
 
+    /* ===============================  Coming Soon Pop  =============================== */
+    document.addEventListener("DOMContentLoaded", function() {
+        var overlay = document.getElementById('overlay');
+        var closeButton = document.getElementById('closeout');
+        var emailForm = document.getElementById(emailForm);
+        var confirmationMessage = document.getElementById('confirmationMessage');
+    
+        overlay.style.display = 'block';
+    
+        closeButton.addEventListener('click', function() {
+            console.log("close button clicked");
+            overlay.style.display = 'none';
+        });
+
+        emailForm.addEventListener('submit', function(event) {
+            event.preventDefault(); //Prevent Form Submission
+            var email = document.getElementById('emailInput').value;
+            confirmationMessage.style.display = 'block';
+            emailForm.style.display = 'none';
+            console.log("Email submitted: " + email);
+        });
+    });
+
     /* ===============================  tooltip  =============================== */
 
     $('[data-tooltip-tit]').hover(function() {
