@@ -451,6 +451,7 @@ $(function() {
 
     /* ===============================  Coming Soon Pop  =============================== */
     document.addEventListener("DOMContentLoaded", function() {
+        console.log("DOM fully loaded and parsed");
         var overlay = document.getElementById('overlay');
         var closeButton = document.getElementById('closeout');
         var emailForm = document.getElementById(emailForm);

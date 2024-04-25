@@ -1006,6 +1006,37 @@ a:hover, span:hover {
 
 /* ====================== [ End Preloader ] ====================== */
 /* ====================== [ Start Coming Soon Pop ] ====================== */
+
+  .lightbox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5)
+  }
+  .toolbarLB {
+    text-align: right;
+    padding: 3px;
+  }
+  .closeLB {
+    position: relative;
+    float: right;
+    color: rgb(48, 41, 56);
+    cursor: pointer;
+  }
+  .lightbox .iframeContainer {
+    vertical-align: middle;
+    background: #CCC;
+    padding: 2px;
+  }
+  .lightbox.closed {
+    display: none;
+  }
+
 #overlay {
 position: fixed;
 top: 0;
@@ -1016,7 +1047,6 @@ background-color: rgba(0, 0, 0, 0.5);
 display: flex;
 justify-content: center;
 align-items: center;
-z-index:9999;
 }
 
 #popup {
