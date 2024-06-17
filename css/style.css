@@ -927,6 +927,7 @@ a:hover, span:hover {
 .pace.pace-inactive {
     width: 100vw;
     opacity: 0;
+<<<<<<< HEAD
 }
 
 .pace.pace-inactive .pace-progress {
@@ -957,6 +958,38 @@ a:hover, span:hover {
     top: 0;
 }
 
+=======
+}
+
+.pace.pace-inactive .pace-progress {
+    max-width: 100vw;
+}
+
+#preloader {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    z-index: 9999999;
+}
+
+#preloader:after, #preloader:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: #252531;
+    -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#preloader:before {
+    top: 0;
+}
+
+>>>>>>> main
 #preloader:after {
     bottom: 0;
 }
@@ -995,6 +1028,233 @@ a:hover, span:hover {
 
 .loading-text.isdone {
     top: 50%;
+<<<<<<< HEAD
+    opacity: 0;
+    -webkit-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-delay: .5s;
+    -o-transition-delay: .5s;
+    transition-delay: .5s;
+}
+
+/* ====================== [ End Preloader ] ====================== */
+/* ====================== [ Start Coming Soon Pop ] ====================== */
+
+  .lightbox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5)
+  }
+  .toolbarLB {
+    text-align: right;
+    padding: 3px;
+  }
+  .closeLB {
+    position: relative;
+    float: right;
+    color: rgb(48, 41, 56);
+    cursor: pointer;
+  }
+  .lightbox .iframeContainer {
+    vertical-align: middle;
+    background: #CCC;
+    padding: 2px;
+  }
+  .lightbox.closed {
+    display: none;
+  }
+
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#popup {
+background-color: #957BDF;
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+width: 100%;
+height: 650px;
+max-width: 1000px;
+max-height: 4000px;
+position: relative;
+z-index: 10000;
+flex-direction: column;
+justify-content: space-between;
+}
+
+#popup p {
+    color:#E8E9FE;
+    font-size: 20px;
+}
+
+.launchsvg {
+    width: 300px;
+    height: auto;
+
+}
+
+#emailForm {
+    margin-top: auto;
+}
+
+#emailInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: #C2C2FC;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#closeout {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #313133;
+}
+
+#closeout:hover {
+    color: #A0A1E5;
+}
+/* ====================== [ End Coming Soon Pop ] ====================== */
+/* ====================== [ Start Text Animation & Images ] ====================== */
+.splitting.animated .char {
+    -webkit-animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+    animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+    -webkit-animation-delay: calc(30ms * var(--char-index));
+    animation-delay: calc(30ms * var(--char-index));
+}
+
+.splitting .whitespace {
+    width: 5px;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.splitting.txt.animated .char {
+    -webkit-animation: fadeIn 0.3s cubic-bezier(0.3, 0, 0.7, 1) both;
+    animation: fadeIn 0.3s cubic-bezier(0.3, 0, 0.7, 1) both;
+    -webkit-animation-delay: calc(10ms * var(--char-index));
+    animation-delay: calc(10ms * var(--char-index));
+}
+
+.splitting.txt .whitespace {
+    width: 5px;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.imago {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-transition: all .8s;
+    -o-transition: all .8s;
+    transition: all .8s;
+    -webkit-transition-delay: .3s;
+    -o-transition-delay: .3s;
+    transition-delay: .3s;
+}
+
+.imago.animated {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ====================== [ End Text Animation & Images ] ====================== */
+
+/* ====================== [ Start progress-wrap ] ====================== */
+.progress-wrap {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 44px;
+    width: 44px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    z-index: 100;
+    opacity: 0;
+=======
     opacity: 0;
     -webkit-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     -o-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1106,6 +1366,7 @@ a:hover, span:hover {
     border-radius: 50px;
     z-index: 100;
     opacity: 0;
+>>>>>>> main
     visibility: hidden;
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
