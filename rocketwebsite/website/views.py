@@ -5,14 +5,10 @@ from django.views.generic import TemplateView
 class RocketWebsiteView(TemplateView):
     pass
     
-home = RocketWebsiteView.as_view(template_name="pages/index5.html")
-dashboard_analytics_view = RocketWebsiteView.as_view(template_name="dashboards/dashboard-analytics.html")
-dashboard_crm_view = RocketWebsiteView.as_view(template_name="dashboards/dashboard-crm.html")
-dashboard_crypto_view = RocketWebsiteView.as_view(template_name="dashboards/dashboard-crypto.html")
-dashboard_projects_view = RocketWebsiteView.as_view(template_name="dashboards/dashboard-projects.html")
-dashboard_nft_view = RocketWebsiteView.as_view(template_name="dashboards/dashboard-nft.html")
-dashboard_job_view = RocketWebsiteView.as_view(template_name="dashboards/dashboard-job.html")
-
+home = RocketWebsiteView.as_view(template_name="index.html")
+about = RocketWebsiteView.as_view(template_name="about.html")
+pricing = RocketWebsiteView.as_view(template_name="pricing.html")
+contact = RocketWebsiteView.as_view(template_name="contact.html")
 
 ##################################
 ##################################
@@ -24,12 +20,13 @@ dashboard_job_view = RocketWebsiteView.as_view(template_name="dashboards/dashboa
 # TICKETS
 
 def home(request):
-    context = {}
-    return render(request,'index.html',context)
+    return render(request,'index.html')
 
-def home2(request):
-    return render(request, 'example.html')
-def home3(request):
-    return render(request, 'example.html')
-def home4(request):
-    return render(request, 'example.html')
+def about(request):
+    return render(request, 'about.html')
+
+def pricing(request):
+    return render(request, 'pricing.html')
+
+def contact(request):
+    return render(request, 'contact/contact.html')

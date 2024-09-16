@@ -73,6 +73,11 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_PATH, 'templates/'),
 )
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static') ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
 WSGI_APPLICATION = 'rocketwebsite.wsgi.application'
 
 
