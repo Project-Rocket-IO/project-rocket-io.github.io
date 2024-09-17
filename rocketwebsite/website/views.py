@@ -7,6 +7,7 @@ class RocketWebsiteView(TemplateView):
     
 home = RocketWebsiteView.as_view(template_name="index.html")
 about = RocketWebsiteView.as_view(template_name="about.html")
+blog = RocketWebsiteView.as_view(template_name="blog.html")
 pricing = RocketWebsiteView.as_view(template_name="pricing.html")
 contact = RocketWebsiteView.as_view(template_name="contact.html")
 
@@ -24,6 +25,9 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def blog(request):
+    return render(request, 'blog.html')
 
 def pricing(request):
     return render(request, 'pricing.html')
