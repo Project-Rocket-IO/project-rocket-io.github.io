@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <!-- Metas -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="RocketPSA About Us"/>
+        <meta name="description" content="Our founders bring together backgrounds in finance, software engineering, and the MSP channel to offer our clients a unique PSA solution. "/>
+        <meta name="author" content="RocketPSA"/>
+        <!-- Title  -->
+        <title>RocketPSA</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="{% static '/images/Purple Rocket Logo 2.png' %}"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Plugins -->
+        <link rel="stylesheet" href="{% static '/css/plugins.css' %}"/>
+        <!-- Core Style Css -->
+        <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    </head>
+    <body>
+        <!-- ==================== Start Loading ==================== -->
+        <div id="preloader"></div>
+        <!-- ==================== End Loading ==================== -->
+        <!-- ==================== Start progress-scroll-button ==================== -->
+        <div class="progress-wrap cursor-pointer">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+            </svg>
+        </div>
+        <!-- ==================== End progress-scroll-button ==================== -->
+        <!-- ==================== Start cursor ==================== -->
+        <div class="mouse-cursor cursor-outer"></div>
+        <div class="mouse-cursor cursor-inner"></div>
+        <!-- ==================== End cursor ==================== -->
+        <!-- ==================== Start Navbar ==================== -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo -->
+                <a class="logo" href="{% url 'home' %}">
+                    <img src="{% static '/images/Purple Rocket Logo.png' %}" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about'%}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'pricing'%}">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                    </ul>
+                    <div class="search">
+                        <span class="icon pe-7s-search cursor-pointer"></span>
+                        <div class="search-form text-center custom-font">
+                            <form>
+                                <input type="text" name="search" placeholder="Search">
+                            </form>
+                            <span class="close pe-7s-close cursor-pointer"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- ==================== End Navbar ==================== -->
+        <!-- ==================== Start Slider ==================== -->
+        <header class="pages-header bg-img valign parallaxie" data-background="{% static '/images/slid/1.jpg' %}" data-overlay-dark="5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cont text-center">
+                            <h1>Blog</h1>
+                            <div class="path">
+                                <a href="#0">Our Content</a>
+                                <span>/</span>
+                                <a href="#0" class="active">Our Mission</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ==================== End Slider ==================== -->
+        <!-- ==================== Start Intro ==================== -->
+        <section class="intro-section section-padding pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="htit sm-mb30">
+                            <h4>The latest and greatest trends</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 offset-lg-1 col-md-8">
+                        <div class="text">
+                            <p class="wow txt" data-splitting>Tailored for the MSP in mind. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==================== End Intro ==================== -->
+        <!-- ==================== Start Services ==================== -->
+        <section class="services section-padding">
+            <div class="container">
+                <div class="row">
+                    {% if blogs %}
+                    {% for blog in blogs %}
+                    <div class="col-lg-4">
+                        <a href="{% url 'blog' blog.pk %}">
+                            <div class="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
+                            <span class="icon pe-7s-gleam"></span>
+                            <h6>{{blog.title}}</h6>
+                            <p>{{blog.subtitle}}</p>
+                        </div></a>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="col-lg-4">
+                        <div class="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
+                            <span class="icon pe-7s-gleam"></span>
+                            <h6>No Blogs Yet</h6>
+                            <p>Wait for a hot release</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+        <!-- ==================== End Services ==================== -->
+        <!-- ==================== Start call-to-action ==================== -->
+        <section class="call-action section-padding sub-bg bg-img" data-background="{% static '/images/pattern.png' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-9">
+                        <div class="content sm-mb30">
+                            <h6 class="wow" data-splitting>Are you</h6>
+                            <h2 class="wow custom-font" data-splitting>
+                                ready to chat <b>PSA software?</b>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 valign">
+                        <a href="{% url 'contact' %}" class="btn-curve btn-lit">
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==================== End call-to-action ==================== -->
+        <!-- ==================== Start Footer ==================== -->
+        <footer class="footer-half sub-bg section-padding pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="cont">
+                            <div class="logo">
+                                <a href="#0">
+                                    <img src="{% static '/images/rocket-logo-light.png' %}" alt="">
+                                </a>
+                            </div>
+                            <div class="con-info custom-font">
+                                <ul>
+                                    <li>
+                                        <span>Email : </span>
+                                        support@rocketpsa.com
+                                    </li>
+                                    <li>
+                                        <span>Address : </span>
+                                        Chicago, IL
+                                
+                                    </li>
+                                    <li>
+                                        <span>Phone : </span>
+                                        (+1) 2345 678 44 88
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="social-icon">
+                                <h6 class="custom-font stit simple-btn">Follow Us</h6>
+                                <div class="social">
+                                    <a href="https://twitter.com/RocketPSA" class="icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-2">
+                        <div class="subscribe mb-50">
+                            <h6 class="custom-font stit simple-btn">Newsletter</h6>
+                            <p>If you want to hear more about RocketPSA and what we are up to, subscribe below!</p>
+                            <form name="Newsletter" data-netlify="true">
+                                <div class="form-group custom-font">
+                                    <input type="email" name="subscribe" placeholder="Your Email">
+                                    <button class="cursor-pointer">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyrights text-center">
+                    <p>
+                     <a>  © 2023, RocketPSA</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- ==================== End Footer ==================== -->
+        <!-- jQuery -->
+        <script src="{% static '/js/jquery-3.0.0.min.js'%} "></script>
+        <script src="{% static '/js/jquery-migrate-3.0.0.min.js'%} "></script>
+        <!-- plugins -->
+        <script src="{% static '/js/plugins.js'%} "></script>
+        <!-- custom scripts -->
+        <script src="{% static '/js/scripts.js'%} "></script>
+    </body>
+</html>
