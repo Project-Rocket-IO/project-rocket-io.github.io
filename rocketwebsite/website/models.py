@@ -8,8 +8,9 @@ class Blog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     author = models.CharField(max_length=255)
-    thumbnail = models.ImageField()
+    thumbnail = models.ImageField(null=True, blank=True)
     featured = models.BooleanField(default=False)
+    date = models.DateField(auto_now=True)
  
     def __str__(self):
         return self.title

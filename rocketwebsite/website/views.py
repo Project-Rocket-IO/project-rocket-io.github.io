@@ -1,15 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-
-# Create your views here.
-class RocketWebsiteView(TemplateView):
-    pass
-    
-home = RocketWebsiteView.as_view(template_name="index.html")
-about = RocketWebsiteView.as_view(template_name="about.html")
-blog = RocketWebsiteView.as_view(template_name="blog.html")
-pricing = RocketWebsiteView.as_view(template_name="pricing.html")
-contact = RocketWebsiteView.as_view(template_name="contact.html")
+from .models import Blog
 
 ##################################
 ##################################
@@ -17,8 +8,9 @@ contact = RocketWebsiteView.as_view(template_name="contact.html")
 ##################################
 ##################################
 
-#########
-# TICKETS
+########
+# MAIN #
+########
 
 def home(request):
     return render(request,'index.html')
@@ -26,8 +18,15 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-def blog(request):
-    return render(request, 'blog.html')
+def blog_list(request):
+    blogs = Blog.objects.all()
+    context = {"blogs":blogs}
+    return render(request, 'blog-list.html', context=context)
+
+def blog(request, pk):
+    blog = Blog.objects.get(pk=pk)
+    context = {"blog":blog}
+    return render(request, 'blog.html', context=context)
 
 def pricing(request):
     return render(request, 'pricing.html')
