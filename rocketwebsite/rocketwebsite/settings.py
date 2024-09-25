@@ -85,10 +85,15 @@ WSGI_APPLICATION = 'rocketwebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(default='postgresql://postgres:mzQIRALoLwlJFTqbKdpMdtVbWNUBHndW@postgres-92nr.railway.internal:5432/railway')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",  # Use a relative path to the database file
+    }
+}
 
 # Enable Connection Pooling
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
