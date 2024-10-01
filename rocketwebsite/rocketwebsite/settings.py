@@ -24,9 +24,9 @@ BASE_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-xodd3vhsih6$(xm8^j$-fh3vfrs8u(ufp-ykao&wupxxh*u&^&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://52.205.28.174/','localhost'.'https://www.rocketpsa.com']
 
 
 # Application definition
